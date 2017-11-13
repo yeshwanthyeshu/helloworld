@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <title>My template</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+    <style>
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+        table table table {
+            table-layout: auto;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        *[x-apple-data-detectors],  /* iOS */
+        .x-gmail-data-detectors,    /* Gmail */
+        .x-gmail-data-detectors *,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying an download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+       }
+       /* If the above doesn't work, add a .g-img class to any image in question. */
+       img.g-img + div {
+           display: none !important;
+       }
+
+       /* What it does: Prevents underlining the button text in Windows 10 */
+        .button-link {
+            text-decoration: none !important;
+        }
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+        /* Thanks to Eric Lepetit (@ericlepetitsf) for help troubleshooting */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) { /* iPhone 6 and 6+ */
+            .email-container {
+                min-width: 375px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+        .button-td:hover,
+        .button-a:hover {
+            background: #555555 !important;
+            border-color: #555555 !important;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
+            .fluid {
+                max-width: 100% !important;
+                height: auto !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+                line-height: 22px !important;
+            }
+        }
+
+    </style>
+</head>
+<body width="100%" bgcolor="#fafafa" style="margin: 0; mso-line-height-rule: exactly;">
+    <center style="width: 100%; background: #ffffff; text-align: left;padding-top:5px;padding-bottom:5px;">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="565" style="display:relative;margin: auto;margin-bottom:15px; box-shadow:0px 1px #ffffff;" class="email-container">
+			<div style="padding-bottom:5px;background-color:#fafafa;">
+				<tr>
+					<td bgcolor="#3a3e47" height="60px" align="center" >
+						<span>
+							<img style="top:0;height:35px;width:60px;float:left" src="logo.png">
+							
+							<span  style="padding-top:10px;font-size:1.35em;font-family: Arial, Helvetica, sans-serif;float:left;margin-left:40px;color:#ffffff">
+								Review blocked sign-in attempt
+							</span>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#fafafa" style="padding: 0px 40px 0px; margin-right:5px; text-align: center;">
+						<h1 style="float:left; font-family: sans-serif; font-size: 0.7em; line-height: 20px; color: #333333; font-weight: normal;">
+							<span>
+								<img src="userlogo.png" height="40px" width="40px;">
+							</span>
+							<b>
+								Hi TrinethraReddy,
+							</b>
+							
+						</h1>
+						<h1 style="float:left;text-align:left; font-family: sans-serif; font-size: 0.7em; line-height: 20px; color: #333333; font-weight: normal;">
+							<b>
+								Google just blocked someone from signing into your Google account
+								thinethraalamur@gmail.com form an app that may put your account at rist.
+							</b>
+						</h1>
+
+					</td>
+				</tr>
+				<tr>
+						<td bgcolor="#fafafa" style="padding-left:40px; text-align: center;">
+							<span>
+							
+							<span><p style="float:left;margin-bottom:-8px; margin-left:25px;font-family: sans-serif; font-size: 1em; line-height: 10px; color: #333333; font-weight: normal;">
+								<b>
+									Less secure app
+								</b>
+							</p></span>
+							
+							</span>
+						</td>
+				</tr>
+				
+				<tr style="display:absolute;top:-15px;">
+					
+						<td bgcolor="#fafafa" style="padding-left: 40px ; font-family: sans-serif; font-size: 0.8em; line-height: 15px; color: #555555; text-align: center;">
+							<p style="display:inlie-block;margin-left:25px;margin-bottom:5px;text-align:left;">
+								
+								Thursday, 9 November 2017 02:33  (India Time)
+								<br>
+								Bengaluru, Karnataka, India*
+								
+							</p>
+						</td>
+					
+				</tr>
+				<tr>
+					<td bgcolor="#fafafa" style="padding: 0px 40px 0px; text-align: center;">
+						<p style="float:left; font-family: sans-serif; font-size: 1em; line-height: 10px; color: #333333; font-weight: normal;">
+							<b>
+								Don't recognise this activity?
+							</b>
+						</p>
+						<p style="margin-top:-8px;float:left;text-align:left; font-family: sans-serif; font-size: 0.68em; line-height: 15px; color: #333333; font-weight: normal;">
+							<b>
+								If you didn't recently receive an error while trying to access a Google service, like Gmail,from a non-Google application, someone may have your password.
+							</b>
+						</p>
+
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#fafafa" style=";width:100%;padding: 0 40px 40px; font-family: sans-serif; font-size: 1em; line-height: 15px; color: #4283f3;">
+						<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" style="float:left;width:500px;">
+							<tr>
+								<td style="float:left;border-radius: 3px; background: #4283f3; text-align: center;" class="button-td">
+									<a href="http://www.google.com" style="background: #4283f3; border: 10px solid #4283f3; font-family: sans-serif; font-size: 0.7; line-height: 1; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;" class="button-a">
+										<span style="font-size:1em;color:#ffffff;">SECURE YOUR ACCOUNT</span>
+									</a>
+								</td>
+							</tr>
+						</table>
+						<!-- Button : END -->
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#fafafa" style="padding: 0px 40px 0px; text-align: center;">
+						<p style="margin-top:-10px;float:left; font-family: sans-serif; font-size: 0.7; line-height: 15px; color: #333333; font-weight: normal;">
+							<b>
+								Are you the one who tried signing in?
+							</b>
+						</p>
+						<p style="margin-top:-10px;float:left;text-align:left; font-family: sans-serif; font-size: 0.7em; line-height: 15px; color: #333333; font-weight: normal;">
+							<b>
+								Google will continue to block sign-in attempts from the app that you're usign
+								because it has known security problems or is out of date. You can continue to use this app by 
+								<a href="#" style="color:#4988f4;text-decoration:none">
+									allowing access to less secure apps,
+								</a>
+								but this may leave your account vulnerable.
+							</b>
+						</p>
+
+					</td>
+				</tr>
+				
+			</div>
+       	</table>
+    </center>
+	<center style="width: 100%; background: #ffffff; text-align: left;">
+			<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="50%" style="margin: auto;" class="email-container">
+				<tr>
+					<td bgcolor="#ffffff" style="padding: 0px 40px 0px; text-align: center;">
+						<h2 style="float:left;text-align:left; font-family: sans-serif; font-size: 0.7em; line-height: 20px; color: #828282; font-weight: normal;">
+							You have received this mandatory email service announcement to update you about
+							important changes to your Google product or account
+						</h2>
+						<h2 style="float:left;text-align:left; font-family: sans-serif; font-size: 0.7em; line-height: 20px; color: #828282; font-weight: normal;">
+							Copyright © 2017 Innominds. All Rights Reserved
+							
+						</h2>
+					</td>
+				</tr>
+			</table>
+	</center>
+</body>
+</html>
