@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+	<select id="chart" onChange="change()">
+		<option value="none">none</option>
+		<option value="bar">Bar</option>
+		<option value="pie">Pie</option>
+	</select>
+	<div id="test">
+		hi. select any type of graph for above.(upper limit for bar is 40)
+	</div>
+	<input id="myinput" type="number"/>
+	<input type="button" value="add" onclick="addtodata()"/>
+	<div id="mydiv">
+		to show
+	</div>
+	<svg id="svg1" width="300" height="200"> </svg>
+	<svg id="svg2" width="300" height="200"> </svg>
+	<script src="script.js"></script>
+    <link rel = "stylesheet" type="text/css" href="style.css">	
+</body>
+</html>
