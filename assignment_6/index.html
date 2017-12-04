@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<!-- The following links are for d3.js
+		the first link is for version 2 (linechart is done by using this)
+		the second link if for version 4
+	-->
+	<script src="http://mbostock.github.com/d3/d3.v2.js"></script>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<!--The below link is for bootstrap-->
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./style.css">
+
+	
+</head>
+<body>
+	
+	<div class="navbar">
+		<a href="#" style="margin-left:200px;">Select the chart </a>
+		<div id="chartselect" style=" margin-left: 500px;">
+			<select id="chart" style="font-size:20px;border-radius:10px;border: 2px solid #ccc;color: #779126;width: 268px;" onChange="change()">
+				<option value="none">none</option>
+				<option value="bar">Bar</option>
+				<option value="pie">Pie</option>
+				<option value="line">Line</option> 
+			</select>
+		</div>
+	</div>
+	<div id="test">
+		hi. select any type of graph for above.
+	</div>
+	<input id="myinput" type="number"/>
+	<input class="btn btn-primary" type="button" value="add to data" onclick="addtodata()"/>
+	<div id="mydiv">
+		to show
+	</div>
+	<div id="savedchart">
+		Click below to save the generated charts.
+		<input class="btn btn-primary" type="button" value="save" onclick="savethecharts()" />
+		<br>Your saved charts are:
+	</div>
+	<svg id="svg1" width="300" height="200"> </svg>
+	<svg id="svg2" width="300" height="200"> </svg>
+	<svg id="svg3" width="300" height="200"> </svg>
+	<script src="./app.js"></script>
+</body>
+</html>
